@@ -4,17 +4,17 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width" />
-	<title>Cadastro de Clientes</title>
+	<title>Cadastro de Serviços</title>
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<strong>Cadastro de Clientes</strong>
+			<strong>Cadastro de Serviços</strong>
 		</div>
 		<div class="panel-body">
-			<form class="form-horizontal" th:object="${cliente}" th:action="@{/save}" method="POST" style="margin: 10px">
+			<form class="form-horizontal" th:object="${servico}" th:action="@{/servicos/save}" method="POST" style="margin: 10px">
 				<div class="form-group">
  					<fieldset>
 						<div class="form-group row">

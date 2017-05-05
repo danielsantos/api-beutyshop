@@ -37,7 +37,7 @@ public class ServicoController {
 	@GetMapping("/add")
 	public ModelAndView add(Servico servico) {
 		
-		ModelAndView mv = new ModelAndView("/servico/add");
+		ModelAndView mv = new ModelAndView("views/servico/add");
 		mv.addObject("servico", servico);
 		
 		return mv;
