@@ -53,6 +53,7 @@ public class HorarioController {
 		ModelAndView modelAndView = new ModelAndView("views/horario/listaServicos");
 		modelAndView.addObject("cliente", cliente);
 		modelAndView.addObject("servicos", servicos);
+		modelAndView.addObject("horario", new Horario());
 		
 		return modelAndView;
 	}
