@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Sistema Modelo</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+    	<div class="container">
+	        <div th:if="${param.error}">
+	            Invalid username and password.
+	        </div>
+	        <div th:if="${param.logout}">
+	            You have been logged out.
+	        </div>
+	        <form th:action="@{/login}" method="post" class="form-signin">
+	            <label for="inputEmail" class="sr-only">Email</label>
+	            <input type="text" name="username" class="form-control" placeholder="Email address"/>
+	            <label for="inputPassword" class="sr-only">Password</label>
+	            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"/>
+	            
+	            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	        </form>
+		</div>
+    </body>
+</html>
