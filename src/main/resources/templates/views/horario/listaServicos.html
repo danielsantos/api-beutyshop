@@ -66,7 +66,7 @@
 							   	<a class="delete btn btn-sm btn-danger" th:href="@{/servicos/desativar/{id}(id=${servico.id})}">Excluir</a>
 							</div>
 							-->
-						</td>
+						</td> 
                     </tr>
                 </tbody>
             </table>
@@ -75,8 +75,8 @@
         
         <form action="#" th:action="@{/horarios/finish/}" th:object="${horario}" method="post">
         
-        	<input type="text" th:field="*{idCliente}" th:value="${cliente.id}" readonly="readonly" />
-        
+        	<input type="hidden" th:field="*{idCliente}" th:value="*{idCliente}" />
+        	
 			<div class="panel-footer">
 				<input type="submit" class="btn btn-sm btn-success" value="Prosseguir" />
 			</div>        
