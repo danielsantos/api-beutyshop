@@ -37,6 +37,10 @@ public class Horario {
 
 	@Transient
 	private Long idCliente;
+	
+	@Transient
+	private List<ServicoDTO> servs;
+	
 
 	public Long getId() {
 		return id;
@@ -76,6 +80,14 @@ public class Horario {
 
 	public void setIdCliente(Long idCliente) {
 		this.idCliente = idCliente;
+	}
+
+	public List<ServicoDTO> getServs() {
+		return servs;
+	}
+
+	public void setServs(List<ServicoDTO> servs) {
+		this.servs = servs;
 	}
 	
 }

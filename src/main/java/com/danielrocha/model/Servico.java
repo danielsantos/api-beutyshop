@@ -7,6 +7,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import com.danielrocha.model.enumeration.TipoSituacao;
 
@@ -21,7 +22,10 @@ public class Servico {
 	
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, length=1)
-	private TipoSituacao situacao = TipoSituacao.A;	
+	private TipoSituacao situacao = TipoSituacao.A;
+	
+	@Transient
+	private boolean escolhido;
 
 	public Long getId() {
 		return id;
@@ -45,6 +49,14 @@ public class Servico {
 
 	public void setSituacao(TipoSituacao situacao) {
 		this.situacao = situacao;
+	}
+
+	public boolean isEscolhido() {
+		return escolhido;
+	}
+
+	public void setEscolhido(boolean escolhido) {
+		this.escolhido = escolhido;
 	}
 	
 }

@@ -55,6 +55,7 @@ public class HorarioController {
 		modelAndView.addObject("servicos", servicos);
 		Horario h = new Horario();
 		h.setIdCliente(id);
+		h.setServicos(servicos);
 		modelAndView.addObject("horario", h);
 		
 		return modelAndView;
@@ -62,7 +63,13 @@ public class HorarioController {
 
 	@RequestMapping(value="/finish", method=RequestMethod.POST)
 	public void fecharHorario(@ModelAttribute Horario horario) {
-		System.out.println("#################### : " + horario.getIdCliente());
+		
+		Cliente cliente = new Cliente();
+		cliente.setId(horario.getIdCliente());
+		
+		horario.setCliente(cliente);
+		
+		service.save(horario);
 		
 	}
 
